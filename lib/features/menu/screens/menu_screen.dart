@@ -258,60 +258,62 @@ class _MenuScreenState extends State<MenuScreen> {
 
   Widget buildCustomBottomNavigationBar(BuildContext context) {
     return Container(
-      height: 67,
       margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 12),
-      padding: EdgeInsets.symmetric(vertical: 10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, -2),
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          buildNavItem(
-            context: context,
-            index: 0,
-            icon: Images.home,
-            label: "الرئيسية",
-            isActive: _currentIndex == 0,
-          ),
-          buildNavItem(
-            context: context,
-            index: 1,
-            icon: Images.list,
-            label: "الفئات",
-            isActive: _currentIndex == 1,
-          ),
-          buildNavItem(
-            context: context,
-            index: 2,
-            icon: Images.orderBag,
-            label: "عربة التسوق",
-            isActive: _currentIndex == 2,
-          ),
-          // const SizedBox(width: 23),
-          buildNavItem(
-            context: context,
-            index: 3,
-            icon: Images.favouriteIcon,
-            label: "المفضله",
-            isActive: _currentIndex == 3,
-          ),
-          buildNavItem(
-            context: context,
-            index: 4,
-            icon: Images.settings,
-            label: "الاعددات",
-            isActive: _currentIndex == 4,
-          ),
-        ],
+      child: Container(
+        height: 67,
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, -2),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            buildNavItem(
+              context: context,
+              index: 0,
+              icon: Images.home,
+              label: "الرئيسية",
+              isActive: _currentIndex == 0,
+            ),
+            buildNavItem(
+              context: context,
+              index: 1,
+              icon: Images.list,
+              label: "الفئات",
+              isActive: _currentIndex == 1,
+            ),
+            buildNavItem(
+              context: context,
+              index: 2,
+              icon: Images.orderBag,
+              label: "عربة التسوق",
+              isActive: _currentIndex == 2,
+            ),
+            // const SizedBox(width: 23),
+            buildNavItem(
+              context: context,
+              index: 3,
+              icon: Images.favouriteIcon,
+              label: "المفضله",
+              isActive: _currentIndex == 3,
+            ),
+            buildNavItem(
+              context: context,
+              index: 4,
+              icon: Images.settings,
+              label: "الاعددات",
+              isActive: _currentIndex == 4,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -926,7 +928,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               return IconButton(
                 icon: Image.asset(Images.moreIcon,
                     color: Theme.of(context).primaryColor,
-                    height: 30,
+                    // height: 30,
                     width: 30),
                 // onPressed: onDrawerOpen,
                 onPressed: () {
@@ -947,7 +949,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: pageIndex == 0
           ? Image.asset(
               Images.appLogo,
-              width: 30,
+              width: 40,
             )
           // Row(
           //         crossAxisAlignment: CrossAxisAlignment.center,
