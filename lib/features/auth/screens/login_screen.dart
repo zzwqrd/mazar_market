@@ -22,8 +22,6 @@ import 'package:mazar_marke/utill/images.dart';
 import 'package:mazar_marke/utill/styles.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/social_login_widget.dart';
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -342,42 +340,42 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ])),
                       ),
 
-                      if (socialStatus!.isFacebook! || socialStatus.isGoogle!)
-                        Center(
-                            child: SocialLoginWidget(countryCode: countryCode)),
-
-                      Center(
-                          child: Text(getTranslated('OR', context),
-                              style: poppinsRegular.copyWith(fontSize: 12))),
-
-                      Center(
-                          child: TextButton(
-                        style: TextButton.styleFrom(
-                          minimumSize: const Size(1, 40),
-                        ),
-                        onPressed: () {
-                          Navigator.pushReplacementNamed(
-                              context, RouteHelper.menu);
-                        },
-                        child: RichText(
-                            text: TextSpan(children: [
-                          TextSpan(
-                              text:
-                                  '${getTranslated('continue_as_a', context)} ',
-                              style: poppinsRegular.copyWith(
-                                  fontSize: Dimensions.fontSizeSmall,
-                                  color: Theme.of(context)
-                                      .hintColor
-                                      .withOpacity(0.6))),
-                          TextSpan(
-                              text: getTranslated('guest', context),
-                              style: poppinsRegular.copyWith(
-                                  color: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .color)),
-                        ])),
-                      )),
+                      // if (socialStatus!.isFacebook! || socialStatus.isGoogle!)
+                      //   Center(
+                      //       child: SocialLoginWidget(countryCode: countryCode)),
+                      //
+                      // Center(
+                      //     child: Text(getTranslated('OR', context),
+                      //         style: poppinsRegular.copyWith(fontSize: 12))),
+                      //
+                      // Center(
+                      //     child: TextButton(
+                      //   style: TextButton.styleFrom(
+                      //     minimumSize: const Size(1, 40),
+                      //   ),
+                      //   onPressed: () {
+                      //     Navigator.pushReplacementNamed(
+                      //         context, RouteHelper.menu);
+                      //   },
+                      //   child: RichText(
+                      //       text: TextSpan(children: [
+                      //     TextSpan(
+                      //         text:
+                      //             '${getTranslated('continue_as_a', context)} ',
+                      //         style: poppinsRegular.copyWith(
+                      //             fontSize: Dimensions.fontSizeSmall,
+                      //             color: Theme.of(context)
+                      //                 .hintColor
+                      //                 .withOpacity(0.6))),
+                      //     TextSpan(
+                      //         text: getTranslated('guest', context),
+                      //         style: poppinsRegular.copyWith(
+                      //             color: Theme.of(context)
+                      //                 .textTheme
+                      //                 .bodyLarge!
+                      //                 .color)),
+                      //   ])),
+                      // )),
 
                       if (ResponsiveHelper.isDesktop(context))
                         const SizedBox(height: 50),

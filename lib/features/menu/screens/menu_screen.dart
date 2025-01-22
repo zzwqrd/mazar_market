@@ -217,42 +217,47 @@ class _MenuScreenState extends State<MenuScreen> {
       required dynamic icon,
       required bool isActive,
       required String label}) {
-    return GestureDetector(
-      onTap: () => _onItemTapped(index),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(
-            icon,
-            width: 20,
-            fit: BoxFit.cover,
-            color:
-                isActive ? ColorResources.colorGreen : const Color(0xFFC9CAD6),
-          ),
-          // Icon(
-          //   icon,
-          //   size: 24,
-          //   color: isActive ? const Color(0xFFEF5730) : const Color(0xFFC9CAD6),
-          // ),
-          Spacer(),
-          // const SizedBox(height: 4),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 12,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: InkWell(
+        onTap: () => _onItemTapped(index),
+
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              icon,
+              width: 20,
+              fit: BoxFit.cover,
               color: isActive
                   ? ColorResources.colorGreen
                   : const Color(0xFFC9CAD6),
             ),
-          ),
-        ],
+            // Icon(
+            //   icon,
+            //   size: 24,
+            //   color: isActive ? const Color(0xFFEF5730) : const Color(0xFFC9CAD6),
+            // ),
+            const Spacer(),
+            // const SizedBox(height: 4),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                color: isActive
+                    ? ColorResources.colorGreen
+                    : const Color(0xFFC9CAD6),
+              ),
+            ),
+          ],
+        ),
+        // child: SvgPicture.asset(
+        //   icon,
+        //   width: 24,
+        //   fit: BoxFit.cover,
+        //   color: isActive ? Colors.amber : Colors.red,
+        // ),
       ),
-      // child: SvgPicture.asset(
-      //   icon,
-      //   width: 24,
-      //   fit: BoxFit.cover,
-      //   color: isActive ? Colors.amber : Colors.red,
-      // ),
     );
   }
 
@@ -260,7 +265,7 @@ class _MenuScreenState extends State<MenuScreen> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 12),
       child: Container(
-        height: 67,
+        height: 62,
         padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
@@ -276,41 +281,52 @@ class _MenuScreenState extends State<MenuScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            buildNavItem(
-              context: context,
-              index: 0,
-              icon: Images.home,
-              label: "الرئيسية",
-              isActive: _currentIndex == 0,
+            Expanded(
+              child: buildNavItem(
+                context: context,
+                index: 0,
+                icon: Images.home,
+                label: "الرئيسية",
+                isActive: _currentIndex == 0,
+              ),
             ),
-            buildNavItem(
-              context: context,
-              index: 1,
-              icon: Images.list,
-              label: "الفئات",
-              isActive: _currentIndex == 1,
+
+            Expanded(
+              child: buildNavItem(
+                context: context,
+                index: 1,
+                icon: Images.list,
+                label: "الفئات",
+                isActive: _currentIndex == 1,
+              ),
             ),
-            buildNavItem(
-              context: context,
-              index: 2,
-              icon: Images.orderBag,
-              label: "عربة التسوق",
-              isActive: _currentIndex == 2,
+            Expanded(
+              child: buildNavItem(
+                context: context,
+                index: 2,
+                icon: Images.orderBag,
+                label: "عربة التسوق",
+                isActive: _currentIndex == 2,
+              ),
             ),
             // const SizedBox(width: 23),
-            buildNavItem(
-              context: context,
-              index: 3,
-              icon: Images.favouriteIcon,
-              label: "المفضله",
-              isActive: _currentIndex == 3,
+            Expanded(
+              child: buildNavItem(
+                context: context,
+                index: 3,
+                icon: Images.favouriteIcon,
+                label: "المفضله",
+                isActive: _currentIndex == 3,
+              ),
             ),
-            buildNavItem(
-              context: context,
-              index: 4,
-              icon: Images.settings,
-              label: "الاعددات",
-              isActive: _currentIndex == 4,
+            Expanded(
+              child: buildNavItem(
+                context: context,
+                index: 4,
+                icon: Images.settings,
+                label: "الاعددات",
+                isActive: _currentIndex == 4,
+              ),
             ),
           ],
         ),
