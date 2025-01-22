@@ -229,9 +229,10 @@ class _MenuScreenState extends State<MenuScreen> {
               icon,
               width: 20,
               fit: BoxFit.cover,
-              color: isActive
-                  ? ColorResources.colorGreen
-                  : const Color(0xFFC9CAD6),
+              color: Colors.white,
+              // color: isActive
+              //     ? ColorResources.colorGreen
+              //     : const Color(0xFFC9CAD6),
             ),
             // Icon(
             //   icon,
@@ -242,11 +243,11 @@ class _MenuScreenState extends State<MenuScreen> {
             // const SizedBox(height: 4),
             Text(
               label,
-              style: TextStyle(
-                fontSize: 12,
-                color: isActive
-                    ? ColorResources.colorGreen
-                    : const Color(0xFFC9CAD6),
+              style: const TextStyle(
+                fontSize: 12, color: Colors.white,
+                // color: isActive
+                //     ? ColorResources.colorGreen
+                //     : const Color(0xFFC9CAD6),
               ),
             ),
           ],
@@ -269,7 +270,8 @@ class _MenuScreenState extends State<MenuScreen> {
         padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Colors.white,
+          // color: Colors.white,
+          color: ColorResources.colorGreen,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
