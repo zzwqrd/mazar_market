@@ -1,0 +1,27 @@
+name: Flutter Web Build
+
+on:
+    push:
+        branches:
+            - main # أو master حسب اسم الفرع عندك
+    workflow_dispatch: # تشغيل يدوي
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up Flutter
+              uses: subosito/flutter-action@v2
+              with:
+                  flutter-version: "3.19.0" # عدّل حسب نسختك
+                  channel: stable
+
+            - name: Flutter pub get
+              run: flutter pub get
+
+            - name: Build Flutter Web
+              run: flutter build web --release
