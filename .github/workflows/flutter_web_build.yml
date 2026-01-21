@@ -1,8 +1,9 @@
-name: Flutter Web Build
+name: Flutter Web Build (Pinned Version)
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -10,18 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Flutter
+      - name: Set up Flutter (Pinned – No Code Changes)
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: "3.22.3"
           channel: stable
+          cache: true
 
-      - name: Flutter version
+      - name: Show Flutter version
         run: flutter --version
 
-      - name: Pub get
+      - name: Disable analytics
+        run: flutter config --no-analytics
+
+      - name: Get dependencies
         run: flutter pub get
 
-      - name: Build Web
-        run: flutter build web --release
+      - name: Build Web (No WASM)
+        run: flutter build web --release --web-renderer html --no-wasm-dry-run
